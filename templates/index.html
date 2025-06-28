@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Inventario de Equipos Médicos</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        label { display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { margin-top: 20px; padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Generador de Inventario</h1>
+    <p>Introduce los parámetros para generar el archivo CSV con datos de equipos médicos.</p>
+    
+    <form action="/generar" method="post">
+        <label for="cantidad_equipos">Cantidad de equipos a generar:</label>
+        <input type="number" id="cantidad_equipos" name="cantidad_equipos" value="1000" required>
+        
+        <label for="estado_hospital">Estado general del hospital:</label>
+        <select id="estado_hospital" name="estado_hospital">
+            <option value="muy bueno">Muy bueno</option>
+            <option value="bueno">Bueno</option>
+            <option value="mediano" selected>Mediano</option>
+            <option value="malo">Malo</option>
+            <option value="pesimo">Pésimo</option>
+        </select>
+        
+        <label for="estado_equipos">Estado de los equipos:</label>
+        <select id="estado_equipos" name="estado_equipos">
+            <option value="muy bueno">Muy bueno</option>
+            <option value="bueno">Bueno</option>
+            <option value="mediano" selected>Mediano</option>
+            <option value="malo">Malo</option>
+            <option value="muy malo">Muy malo</option>
+        </select>
+        
+        <button type="submit">Generar y Descargar CSV</button>
+    </form>
+</body>
+</html>
